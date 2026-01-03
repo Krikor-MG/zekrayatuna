@@ -20,13 +20,14 @@ export default function Home() {
       {/* HERO */}
       <section className="flex flex-col items-center justify-center px-4 py-24">
         <div className="flex flex-col items-center gap-6">
-          <Image
-            src="/zekrayatuna.png"
-            alt="Zekrayatuna logo"
-            width={180}
-            height={180}
-            priority
-          />
+       <img
+  src="/zekrayatuna.png"
+  alt="Zekrayatuna logo"
+  width={180}
+  height={180}
+  className="mx-auto"
+/>
+
 
           <h1 className="text-4xl md:text-6xl font-bold text-center">
             Zekrayatuna
