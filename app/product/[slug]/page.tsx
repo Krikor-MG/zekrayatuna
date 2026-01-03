@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import { IoLogoWhatsapp } from "react-icons/io5"
 
+
 interface ProductPageProps {
   params: Promise<{
     slug: string
