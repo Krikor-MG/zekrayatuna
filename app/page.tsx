@@ -21,7 +21,7 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center px-4 py-24">
         <div className="flex flex-col items-center gap-6">
        <img
-  src="/zekrayatuna.png"
+  src="/Zekrayatuna.png"
   alt="Zekrayatuna logo"
   width={180}
   height={180}
