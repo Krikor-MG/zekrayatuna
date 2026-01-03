@@ -14,7 +14,7 @@ const _cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Zekrayatuna",
   description: "A premium collection of memories",
-  generator: "v0.app",
+
   icons: {
     icon: [
       {

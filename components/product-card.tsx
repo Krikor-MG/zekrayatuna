@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Card } from "@/components/ui/card"
 
 interface ProductCardProps {
@@ -14,24 +15,30 @@ interface ProductCardProps {
 
 export function ProductCard({ product, index }: ProductCardProps) {
   return (
-    <Link href={`/product/${product.slug}`}>
-      <Card
-        className="group relative overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-500 animate-in fade-in slide-in-from-bottom-4 cursor-pointer"
-        style={{ animationDelay: `${index * 100}ms` }}
-      >
-        {/* Product Image Placeholder */}
-        <div className="aspect-square bg-muted flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:scale-110 transition-transform duration-700" />
-          <div className="relative z-10 text-muted-foreground/30 text-sm font-light">Image Placeholder</div>
+    <Card
+      className="overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-500"
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      {/* CLICKABLE IMAGE */}
+      <Link href={`/product/${product.slug}`}>
+        <div className="aspect-square bg-muted relative overflow-hidden cursor-pointer">
+          <Image
+            src={product.slug === "product-1" ? "/square2.jpg" : "/circle.jpeg"}
+            alt={product.name}
+            width={600}
+            height={600}
+            className="w-full h-full object-cover"
+            priority
+          />
         </div>
-  
-        {/* Product Info */}
-        <div className="p-6 text-center">
-          <h3 className="text-lg font-light text-card-foreground group-hover:text-primary transition-colors duration-300">
-            {product.name}
-          </h3>
-        </div>
-      </Card>
-    </Link>
+      </Link>
+
+      {/* PRODUCT NAME */}
+      <div className="px-4 py-4 text-center">
+        <h3 className="text-lg md:text-xl font-bold text-black">
+          {product.name}
+        </h3>
+      </div>
+    </Card>
   )
 }

@@ -28,8 +28,14 @@
   --radius: 0.5rem;
 }
 
+/* 🔥 FONT SETUP */
 @theme inline {
-  --font-sans: "Cormorant Garamond", "Geist", serif;
+  /* Branding / headings */
+  --font-sans: "Cormorant Garamond", serif;
+
+  /* UI / business text */
+  --font-ui: "Geist", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
   --font-mono: "Geist Mono", monospace;
 
   --color-background: var(--background);
@@ -54,6 +60,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* BASE */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -62,5 +69,15 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+  }
+}
+
+/* 🔥 UI TEXT FIX (Instagram, WhatsApp, Footer) */
+@layer utilities {
+  .ui-text {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    color: oklch(0.15 0 0); /* clean strong black */
+    letter-spacing: 0.01em;
   }
 }
